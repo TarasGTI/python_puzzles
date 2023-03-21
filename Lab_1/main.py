@@ -1,4 +1,5 @@
 import sys
+import time
 
 
 class Helpers(object):
@@ -22,8 +23,9 @@ class Helpers(object):
 helper = Helpers()
 
 # Get all arguments  of script without script name (argument[0])
-##input_arguments = sys.argv.pop(0)
-input_arguments = [1, 33, 10, 0, 9, 3, 7, 5, 3, 9, 6, 0]
+input_arguments_raw = sys.argv[1:]
+input_arguments = list(map(int, input_arguments_raw))
+##input_arguments = [1, 33, 10, 0, 9, 3, 7, 5, 3, 9, 6, 0]
 equal_to_number = 10
 
 for argument_id, argument in enumerate(input_arguments):
@@ -35,5 +37,7 @@ for argument_id, argument in enumerate(input_arguments):
                 print(argument, "+", sub_argument)
             else:
                 continue
+
+time.sleep(5)
 
 input("Press Enter to continue...")
